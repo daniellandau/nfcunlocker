@@ -9,20 +9,22 @@ import android.content.SharedPreferences.Editor;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Build;
 import android.os.Bundle;
+import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
 import android.text.method.LinkMovementMethod;
+import android.view.MenuItem;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.actionbarsherlock.app.SherlockPreferenceActivity;
-import com.actionbarsherlock.view.MenuItem;
+//import com.actionbarsherlock.app.SherlockPreferenceActivity;
+//import com.actionbarsherlock.view.MenuItem;
 import com.steelrat.nfcunlocker.NFCApplication;
 import com.steelrat.nfcunlocker.R;
 import com.steelrat.nfcunlocker.helpers.AppDeviceAdminReceiver;
 import com.steelrat.nfcunlocker.unlockmethods.UnlockMethod;
 import com.steelrat.nfcunlocker.unlockmethods.UnlockMethodFactory;
 
-public abstract class SettingsActivityBase extends SherlockPreferenceActivity implements
+public abstract class SettingsActivityBase extends PreferenceActivity implements
 		OnSharedPreferenceChangeListener {
 	ComponentName mAppDeviceAdmin;
 	DevicePolicyManager mDPM;
@@ -35,7 +37,7 @@ public abstract class SettingsActivityBase extends SherlockPreferenceActivity im
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 
 		mPreferences = PreferenceManager
 				.getDefaultSharedPreferences(this);

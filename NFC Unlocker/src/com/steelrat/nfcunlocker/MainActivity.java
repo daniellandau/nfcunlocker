@@ -4,9 +4,12 @@ package com.steelrat.nfcunlocker;
 import java.util.ArrayList;
 import java.util.Map;
 
-import com.actionbarsherlock.app.SherlockListActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
+//import com.actionbarsherlock.app.SherlockListActivity;
+//import com.actionbarsherlock.view.Menu;
+//import com.actionbarsherlock.view.MenuItem;
+import android.app.ListActivity;
+import android.view.Menu;
+import android.view.MenuItem;
 import com.steelrat.nfcunlocker.helpers.TagsStorage;
 import com.steelrat.nfcunlocker.settingsactivity.SettingsActivityBase;
 
@@ -24,7 +27,7 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
 
-public class MainActivity extends SherlockListActivity {
+public class MainActivity extends ListActivity {
 	TagsStorage mTagsStorage;
 	SimpleAdapter mListAdapter;
 	ArrayList<Map<String, String>> mTags;
@@ -104,7 +107,7 @@ public class MainActivity extends SherlockListActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getSupportMenuInflater().inflate(R.menu.main, menu);
+		getMenuInflater().inflate(R.menu.main, menu);
 		return true;
 	}
 	

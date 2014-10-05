@@ -1,8 +1,11 @@
 package com.steelrat.nfcunlocker;
 
-import com.actionbarsherlock.app.SherlockActivity;
-import com.actionbarsherlock.view.Menu;
-import com.actionbarsherlock.view.MenuItem;
+//import com.actionbarsherlock.app.SherlockActivity;
+//import com.actionbarsherlock.view.Menu;
+//import com.actionbarsherlock.view.MenuItem;
+import android.app.Activity;
+import android.view.Menu;
+import android.view.MenuItem;
 import com.steelrat.nfcunlocker.helpers.TagsStorage;
 
 import android.app.PendingIntent;
@@ -15,7 +18,7 @@ import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class AddActivity extends SherlockActivity {
+public class AddActivity extends Activity {
 	NfcAdapter mAdapter;
 	PendingIntent mPendingIntent;
 	byte[] mId;
@@ -28,7 +31,7 @@ public class AddActivity extends SherlockActivity {
 		super.onCreate(savedInstanceState);
 		
 		setContentView(R.layout.activity_add);
-		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 
 		mAdapter = NfcAdapter.getDefaultAdapter(this);
 		mTags = new TagsStorage(this);
@@ -78,7 +81,7 @@ public class AddActivity extends SherlockActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getSupportMenuInflater().inflate(R.menu.add, menu);
+		getMenuInflater().inflate(R.menu.add, menu);
 		return true;
 	}
 

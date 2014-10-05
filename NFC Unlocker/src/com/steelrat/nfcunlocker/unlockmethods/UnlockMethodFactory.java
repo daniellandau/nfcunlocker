@@ -10,10 +10,8 @@ public class UnlockMethodFactory {
 			unlockMethod = new FlagUnlock(activity);
 		} else if (methodName.equals("InputUnlock")) {
 			unlockMethod = new InputUnlock(activity);
-		} else if (methodName.equals("KeyguardUnlock")) {
-			unlockMethod = new KeyguardUnlock(activity);
 		}
-		
+
 		return unlockMethod;
 	}
 	
